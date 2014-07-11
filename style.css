@@ -89,9 +89,10 @@ input[name=state-screen]:checked + .state-screen {
 
 form > menu {
 	list-style: none;
+	text-align: center;
 }
 form > menu li {
-	float: left;
+	display: inline-block;
 	width: 50%;
 	text-align: center;
 }

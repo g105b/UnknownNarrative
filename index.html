@@ -12,7 +12,7 @@
 <p>The greatest opportunities present themselves when all hope is lost...
 </main>
 
-<form method="post">
+<form method="post" action="game.php">
 	<input type="radio" name="state-screen" id="state-screen-none" />
 
 	<input type="radio" name="state-screen" id="state-screen-option" />
@@ -28,19 +28,11 @@
 		<nav></nav>
 	</div>
 
-	<input type="radio" name="state-screen" id="state-screen-items" checked/>
+	<input type="radio" name="state-screen" id="state-screen-items" />
 	<div class="state-screen" id="items">
 		<label class="quit" for="state-screen-none">close</label>
 		<h1>In your pockets</h1>
 		<ul id="items-pockets" data-container="pocket"></ul>
-
-		<!-- 
-		<li>
-			<input type="checkbox" id="item-torch" 
-				name="item-pocket" value="torch" />
-			<label for="item-torch">Torch</label>
-		</li> 
-		-->
 
 		<h1>Around you</h1>
 		<ul id="items-around" data-container="around"></ul>
@@ -53,8 +45,7 @@
 	<menu>
 		<li>
 			<label for="state-screen-areas">Area</label>
-		</li>
-		<li>
+		</li><li>
 			<label for="state-screen-items">Items</label>
 		</li>
 	</menu>

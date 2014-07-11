@@ -158,6 +158,10 @@ function item_add(name, list, quantity) {
 		li.appendChild(label);
 
 		input.id = id;
+		input.name = "item-" 
+			+ list.getAttribute("data-container") 
+			+ "[]";
+		input.value = idName;
 		input.type = "checkbox";
 		label.setAttribute("for", id);
 
@@ -186,15 +190,60 @@ function e_scroll_horizontal(e) {
 	this.scrollLeft -= e.wheelDeltaY;
 }
 
+function save() {
+	var
+		xhr = new XMLHttpRequest(),
+	$;
+
+	xhr.open("head", "save.php", true);
+	xhr.addEventListener("load", save_callback);
+	xhr.send();
+}
+
+function save_callback() {
+	console.log("Game saved...");
+}
+
+function update(e) {
+	if(e) {
+		e.preventDefault();		
+	}
+
+	var 
+		xhr = new XMLHttpRequest(),
+		obj = {},
+	$;
+
+	if(e) {
+		xhr.open("post", "game.php", true);
+	}
+	else {
+		xhr.open("get", "game.php", true);		
+	}
+
+	xhr.addEventListener("load", update_callback);
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send(obj);
+}
+
+function update_callback() {
+	var
+		obj = JSON.parse(this.responseText),
+	$;
+	console.log(obj);
+
+	save();
+}
+
 // On page load, while the first request is being made, a random quote is typed.
 type(randPara(main.querySelectorAll("p")));
 buildNav();
 
 itemsPocket.addEventListener("mousewheel", e_scroll_horizontal);
 itemsAround.addEventListener("mousewheel", e_scroll_horizontal);
+document.forms[0].addEventListener("submit", update);
 
-for(var i = 0; i < 10; i++) {
-	item_add("Item " + i);
-}
+update();
 
 })();
