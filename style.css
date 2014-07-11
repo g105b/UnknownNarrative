@@ -170,6 +170,11 @@ form > menu li:last-of-type label {
 	white-space: nowrap;
 	padding: 0 1em;
 	text-align: center;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+#items ul::-webkit-scrollbar {
+	display: none;
 }
 #items ul:empty::after {
 	font-size: 0.7rem;
@@ -183,6 +188,7 @@ form > menu li:last-of-type label {
 	content: "There's nothing around";
 }
 #items ul li {
+	position: relative;
 	display: inline-block;
 	margin-right: 4px;
 }
@@ -198,7 +204,14 @@ form > menu li:last-of-type label {
 	color: #000;
 	text-decoration: underline;
 }
-#items ul li label[data-quantity]::after {
+#items ul li[data-quantity]::after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -0rem;
+	font-size: 0.5rem;
+	text-align: center;
+	color: #aaa;
 	content: " (" attr(data-quantity) ")";
 }
 

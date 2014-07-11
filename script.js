@@ -1,6 +1,8 @@
 (function() {
 var
 	main = document.querySelector("main"),
+	itemsPocket = document.querySelector("#items #items-pockets"),
+	itemsAround = document.querySelector("#items #items-around"),
 $;
 
 /**
@@ -109,8 +111,90 @@ function buildNav() {
 	}
 }
 
+/**
+ * Puts an item or items into your pockets, or in the area around you.
+ */
+function item_add(name, list, quantity) {
+	var
+		idName = name.replace(/\s+/g, '-', "-").toLowerCase(),
+		li,
+		input,
+		label,
+		id,
+	$;
+
+	if(!list) {
+		list = itemsPocket;
+	}
+
+	id = "item-"
+		+ list.getAttribute("data-container") 
+		+ "-"
+		+ idName;
+
+	// Find existing item in the list:
+	input = list.querySelector("#" + id)
+	if(input) {
+		li = input.parentNode;
+		label = li.querySelector("label");
+
+		if(!quantity) {
+			quantity = 1;
+		}
+		if(li.hasAttribute("data-quantity")) {
+			quantity += +li.getAttribute("data-quantity");
+		}
+
+		li.setAttribute("data-quantity", quantity);
+	}
+	else {
+		li = document.createElement("li");
+		input = document.createElement("input");
+		label = document.createElement("label");
+
+		label.textContent = name;
+
+		li.appendChild(input);
+		li.appendChild(label);
+
+		input.id = id;
+		input.type = "checkbox";
+		label.setAttribute("for", id);
+
+		if(quantity) {
+			li.setAttribute("data-quantity", quantity);
+		}
+
+		list.appendChild(li);
+	}
+}
+
+/**
+ * Empties the list of items around.
+ */
+function items_around_remove() {
+	while(itemsAround.firstChild) {
+		itemsAround.removeChild(ul.firstChild);
+	}
+}
+
+/**
+ * Converts mousewheel scrolls to horizontal.
+ */
+function e_scroll_horizontal(e) {
+	e.preventDefault();
+	this.scrollLeft -= e.wheelDeltaY;
+}
+
 // On page load, while the first request is being made, a random quote is typed.
 type(randPara(main.querySelectorAll("p")));
 buildNav();
+
+itemsPocket.addEventListener("mousewheel", e_scroll_horizontal);
+itemsAround.addEventListener("mousewheel", e_scroll_horizontal);
+
+for(var i = 0; i < 10; i++) {
+	item_add("Item " + i);
+}
 
 })();

@@ -32,18 +32,18 @@
 	<div class="state-screen" id="items">
 		<label class="quit" for="state-screen-none">close</label>
 		<h1>In your pockets</h1>
-		<ul id="items-pockets"></ul>
+		<ul id="items-pockets" data-container="pocket"></ul>
 
 		<!-- 
 		<li>
 			<input type="checkbox" id="item-torch" 
-				name="item" value="torch" />
+				name="item-pocket" value="torch" />
 			<label for="item-torch">Torch</label>
 		</li> 
 		-->
 
 		<h1>Around you</h1>
-		<ul id="items-around"></ul>
+		<ul id="items-around" data-container="around"></ul>
 
 		<div>
 			<button name="btn-action">Use</button>
@@ -59,39 +59,4 @@
 		</li>
 	</menu>
 </form>
-<!-- <nav>
-	<ul>
-		<li>
-			<button>One</button>
-		</li>
-		<li>
-			<button>Two</button>
-		</li>
-		<li>
-			<button>Three</button>
-		</li>
-	</ul>	
-</nav>
-
-<menu>
-	<li>
-		<button>Act1</button>
-	</li>
-	<li>
-		<button>Act2</button>
-	</li>
-	<li>
-		<button>Act3</button>
-	</li>
-</menu>
-
-<aside>
-	<h1>Title</h1>
-	<dl>
-		<dt>Item1<span class="count">1</span></dt>
-		<dd>Description</dd>
-		<dt>Item2<span class="count">12</span></dt>
-		<dd>Desc 2</dd>
-	</dl>
-</aside>
- --><script src="/script.js"></script>
+<script src="/script.js"></script>
