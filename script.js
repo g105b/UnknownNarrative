@@ -8,10 +8,19 @@ $;
 /**
  * Shorthand function for XMLHttpRequest.
  */
-function x(command, args) {
+function x(method, command, obj, callback) {
 	var 
 		xhr = new XMLHttpRequest(),
+		url = command + ".php",
 	$;
+
+	xhr.open(method, url, true);
+	xhr.addEventListener("load", callback);
+
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+	xhr.send(obj);
 }
 
 /**
@@ -32,6 +41,7 @@ function type(msg, addTo) {
 	}
 
 	if(!c) {
+		update();
 		return;
 	}
 
@@ -190,18 +200,18 @@ function e_scroll_horizontal(e) {
 	this.scrollLeft -= e.wheelDeltaY;
 }
 
-function save() {
-	var
-		xhr = new XMLHttpRequest(),
-	$;
-
-	xhr.open("head", "save.php", true);
-	xhr.addEventListener("load", save_callback);
-	xhr.send();
+function save(callback) {
+	x("head", "save", {}, function() {
+		save_callback(callback);
+	});
 }
 
-function save_callback() {
+function save_callback(callback) {
 	console.log("Game saved...");
+
+	if(callback) {
+		callback();
+	}
 }
 
 function update(e) {
@@ -210,21 +220,16 @@ function update(e) {
 	}
 
 	var 
-		xhr = new XMLHttpRequest(),
 		obj = {},
+		method = "get",
 	$;
 
 	if(e) {
-		xhr.open("post", "game.php", true);
-	}
-	else {
-		xhr.open("get", "game.php", true);		
+		method = "post";
+		// TODO: Build up obj.		
 	}
 
-	xhr.addEventListener("load", update_callback);
-	xhr.setRequestHeader("Accept", "application/json");
-	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhr.send(obj);
+	x(method, "game", obj, update_callback);
 }
 
 function update_callback() {
@@ -248,6 +253,6 @@ itemsPocket.addEventListener("mousewheel", e_scroll_horizontal);
 itemsAround.addEventListener("mousewheel", e_scroll_horizontal);
 document.forms[0].addEventListener("submit", update);
 
-update();
+save();
 
 })();

@@ -15,18 +15,18 @@ public function __construct() {
 		"unk-pwd", [
 			Dal::ATTR_EMULATE_PREPARES 		=> false,
 			Dal::ATTR_ERRMODE 				=> Dal::ERRMODE_EXCEPTION,
-			Dal::ATTR_DEFAULT_FETCH_MODE 	=> Dal::FETCH_OBJ,
 		]
 	);
 }
 
-public function __call($name, $params) {
+public function __call($name, $args) {
 	$sqlPath = "{$this->serviceDirectory}/$name.sql";
 	if(!file_exists($sqlPath)) {
 		throw new \BadMethodCallException("Service $name does not exist.");
 	}
 
 	$sql = file_get_contents($sqlPath);
+	$params = $args[0];
 
 	try {
 		$stmt = $this->dbh->prepare($sql);
@@ -41,12 +41,20 @@ public function __call($name, $params) {
 		return new Database_Error($e->getMessage());
 	}
 
-	return $stmt->fetchAll();
+	return $stmt->fetchAll(Dal::FETCH_CLASS, "Game\Database_Result");
 }
 
 }#Database
 
-class Database_Error implements Response {
+class Database_Result extends Response implements \JsonSerializable {
+
+public function jsonSerialize() {
+	return "TEST FROM OUTPUT";
+}
+
+}#Database_Result
+
+class Database_Error extends Response implements \JsonSerializable {
 
 private $msg = "";
 
@@ -54,14 +62,9 @@ public function __construct($msg) {
 	$this->msg = preg_replace("/(SQLSTATE\[[0-9A-Z]*\]: )/", "", $msg);
 }
 
-public function output() {
-	$obj = new \StdClass();
-	$obj->error = $this->msg;
-	return $obj;
-}
-
-public function __toString() {
-	return $this->msg;
+public function jsonSerialize() {
+	$this->obj->error = $this->msg;
+	return $this->obj;
 }
 
 }#Database_Error
