@@ -100,6 +100,8 @@ function buildNav() {
 			li = document.createElement("li");
 			button = document.createElement("button")
 			button.disabled = true;
+			button.name = "position";
+			button.value = (x - 3) + "/" + (y - 3);
 
 			li.appendChild(button);
 			ol.appendChild(li);

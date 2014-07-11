@@ -21,17 +21,33 @@
 		<h1>Option state</h1>
 	</div>
 
-	<input type="radio" name="state-screen" id="state-screen-areas" checked/>
+	<input type="radio" name="state-screen" id="state-screen-areas" />
 	<div class="state-screen" id="areas">
 		<label class="quit" for="state-screen-none">close</label>
 		
 		<nav></nav>
 	</div>
 
-	<input type="radio" name="state-screen" id="state-screen-items" />
+	<input type="radio" name="state-screen" id="state-screen-items" checked/>
 	<div class="state-screen" id="items">
 		<label class="quit" for="state-screen-none">close</label>
-		<h1>Items</h1>
+		<h1>In your pockets</h1>
+		<ul id="items-pockets"></ul>
+
+		<!-- 
+		<li>
+			<input type="checkbox" id="item-torch" 
+				name="item" value="torch" />
+			<label for="item-torch">Torch</label>
+		</li> 
+		-->
+
+		<h1>Around you</h1>
+		<ul id="items-around"></ul>
+
+		<div>
+			<button name="btn-action">Use</button>
+		</div>
 	</div>
 
 	<menu>

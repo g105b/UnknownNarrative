@@ -4,6 +4,7 @@
   font-weight: 300;
   src: url("/font.woff") format('woff');
 }
+/* RESET **********************************************************************/
 html {
 	font-size: 16px;
 }
@@ -20,7 +21,9 @@ body, body * {
 	padding: 0;
 }
 
+/* INTERACTION ****************************************************************/
 button, label {
+	box-sizing: border-box;
 	border: 2px solid #fff;
 	padding: 0.5em 1em;
 }
@@ -31,6 +34,7 @@ button:active, label:active {
 	opacity: 0.5;
 }
 
+/* UI *************************************************************************/
 main {
 	position: absolute;
 	top: 0;
@@ -102,10 +106,12 @@ form > menu li:last-of-type label {
 	margin-right: 2em;
 }
 
+/* OPTIONS ********************************************************************/
 #options {
 
 }
 
+/* AREAS **********************************************************************/
 #areas {
 	height: 10rem;
 }
@@ -143,96 +149,62 @@ form > menu li:last-of-type label {
 #areas nav ol li button:disabled {
 	border-color: #000;
 	background: #333;
-	color: transparent;
+	color: #555;
 }
 
+/* ITEMS **********************************************************************/
 #items {
 
 }
-
-/*main {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 5em;
+#items > h1 {
+	font-weight: normal;
+	text-align: center;
+	font-size: 0.75rem;
+	margin: 0.5rem 0;
 }
-nav {
-	position: fixed;
-	bottom: 0;
-	left: 0;
+#items ul {
+	display: block;
+	margin-bottom: 1rem;
+	overflow-x: scroll;
+	list-style: none;
+	white-space: nowrap;
+	padding: 0 1em;
+	text-align: center;
 }
-nav ul {
-	list-style-type: none;
+#items ul:empty::after {
+	font-size: 0.7rem;
+	font-style: italic;
+	color: #aaa;
 }
-nav ul li {
-	float: left;
+#items ul#items-pockets:empty::after {
+	content: "Your pockets are empty";
+}
+#items ul#items-around:empty::after {
+	content: "There's nothing around";
+}
+#items ul li {
+	display: inline-block;
 	margin-right: 4px;
 }
-nav ul li button {
-
-}
-menu {
-	position: fixed;
-	top: 0;
-	right: 0;
-	list-style-type: none;
-	text-align: right;
-}
-menu li {
-	margin-bottom: 4px;
-}
-menu li button {
-
-}
-aside {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	text-align: right;
-}
-aside h1 {
-
-}
-aside dl {
-}
-aside dl dt {
-	float: right;
-	clear: both;
-}
-aside dl dt .count::before {
-	content: "[";
-	opacity: 0.5;
-}
-aside dl dt .count::after {
-	content: "]";
-	opacity: 0.5;
-}
-aside dl dd {
+#items ul li input {
 	display: none;
-
-	float: left;
-	font-style: italic;
-	opacity: 0.5;
-	padding-right: 1em;
 }
-aside dl dt:hover + dd {
+#items ul li label {
 	display: block;
+	font-size: 0.7rem;
 }
-p {
-	margin: 0;
-	padding: 0;
-	margin-left: 0.1rem;
-	padding-bottom: 0.5em;
-	line-height: 1.5em;
+#items ul li input:checked + label {
+	background: #fff;
+	color: #000;
+	text-decoration: underline;
 }
-button {
-	background: #333;
-	color: #ddd;
-	border: 2px solid #aaa;
-	padding: 1em;
-	cursor: crosshair;
+#items ul li label[data-quantity]::after {
+	content: " (" attr(data-quantity) ")";
 }
-button:active {
-	background: black;
-	color: white;
-}*/
+
+#items > div {
+	text-align: center;
+}
+#items button {
+	min-width: 10em;
+}
