@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "GregPixel";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font.woff") format('woff');
+}
+html, body {
+	margin: 0;
+	min-height: 100%;
+	background: black;
+	color: white;
+}
+body, body * {
+	font-family: "GregPixel", monospace;
+	cursor: default;
+	margin: 0;
+	padding: 0;
+}
+main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 5em;
+}
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+nav ul {
+	list-style-type: none;
+}
+nav ul li {
+	float: left;
+	margin-right: 4px;
+}
+nav ul li button {
+
+}
+menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	list-style-type: none;
+	text-align: right;
+}
+menu li {
+	margin-bottom: 4px;
+}
+menu li button {
+
+}
+aside {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	text-align: right;
+}
+aside h1 {
+
+}
+aside dl {
+}
+aside dl dt {
+	float: right;
+	clear: both;
+}
+aside dl dt .count::before {
+	content: "[";
+	opacity: 0.5;
+}
+aside dl dt .count::after {
+	content: "]";
+	opacity: 0.5;
+}
+aside dl dd {
+	display: none;
+
+	float: left;
+	font-style: italic;
+	opacity: 0.5;
+	padding-right: 1em;
+}
+aside dl dt:hover + dd {
+	display: block;
+}
+p {
+	margin: 0;
+	padding: 0;
+	margin-left: 0.1rem;
+	padding-bottom: 0.5em;
+	line-height: 1.5em;
+}
+button {
+	background: #333;
+	color: #ddd;
+	border: 2px solid #aaa;
+	padding: 1em;
+	cursor: crosshair;
+}
+button:active {
+	background: black;
+	color: white;
+}
