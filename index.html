@@ -1,44 +1,81 @@
 <!doctype html>
-<link rel="stylesheet" href="/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" href="/style.css"
+	media="screen, handheld" />
+<link rel="stylesheet" href="/style-enhanced.css"
+	media="screen and (min-width: 480px)" />
+
 <main>
 <p>What lies ahead is unknown...
 <p>Life, is what you make of it...
 <p>The greatest opportunities present themselves when all hope is lost...
 </main>
 
-<nav>
+<form method="post">
+	<input type="radio" name="state-screen" id="state-screen-none" />
+
+	<input type="radio" name="state-screen" id="state-screen-option" />
+	<div class="state-screen" id="option">
+		<label class="quit" for="state-screen-none">close</label>
+		<h1>Option state</h1>
+	</div>
+
+	<input type="radio" name="state-screen" id="state-screen-areas" checked/>
+	<div class="state-screen" id="areas">
+		<label class="quit" for="state-screen-none">close</label>
+		
+		<nav></nav>
+	</div>
+
+	<input type="radio" name="state-screen" id="state-screen-items" />
+	<div class="state-screen" id="items">
+		<label class="quit" for="state-screen-none">close</label>
+		<h1>Items</h1>
+	</div>
+
+	<menu>
+		<li>
+			<label for="state-screen-areas">Area</label>
+		</li>
+		<li>
+			<label for="state-screen-items">Items</label>
+		</li>
+	</menu>
+</form>
+<!-- <nav>
 	<ul>
 		<li>
-			<button>Cave</button>
+			<button>One</button>
 		</li>
 		<li>
-			<button>Beach</button>
+			<button>Two</button>
 		</li>
 		<li>
-			<button>Forest</button>
+			<button>Three</button>
 		</li>
 	</ul>	
 </nav>
 
 <menu>
 	<li>
-		<button>Light fire</button>
+		<button>Act1</button>
 	</li>
 	<li>
-		<button>Shout</button>
+		<button>Act2</button>
 	</li>
 	<li>
-		<button>Paint rock</button>
+		<button>Act3</button>
 	</li>
 </menu>
 
 <aside>
-	<h1>You have:</h1>
+	<h1>Title</h1>
 	<dl>
-		<dt>Rock <span class="count">1</span></dt>
-		<dd>Small rock used as a weapon</dd>
-		<dt>Wood <span class="count">12</span></dt>
-		<dd>Basis for construction</dd>
+		<dt>Item1<span class="count">1</span></dt>
+		<dd>Description</dd>
+		<dt>Item2<span class="count">12</span></dt>
+		<dd>Desc 2</dd>
 	</dl>
 </aside>
-<script src="/script.js"></script>
+ --><script src="/script.js"></script>

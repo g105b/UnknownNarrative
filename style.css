@@ -4,6 +4,9 @@
   font-weight: 300;
   src: url("/font.woff") format('woff');
 }
+html {
+	font-size: 16px;
+}
 html, body {
 	margin: 0;
 	min-height: 100%;
@@ -16,7 +19,138 @@ body, body * {
 	margin: 0;
 	padding: 0;
 }
+
+button, label {
+	border: 2px solid #fff;
+	padding: 0.5em 1em;
+}
+button:hover, label:hover {
+	background: #444;
+}
+button:active, label:active {
+	opacity: 0.5;
+}
+
 main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 4rem;
+	padding: 0.5rem;
+}
+form {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4rem;
+}
+
+input[name=state-screen] {
+	display: none;
+}
+.state-screen {
+	display: none;
+
+	position: fixed;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
+	min-height: 10rem;
+	background: #333;
+}
+.state-screen .quit {
+	position: absolute;
+	font-size: 0.5rem;
+	left: 0;
+	right: 0;
+	top: -3em;
+	text-align: center;
+	border-color: #333;
+	color: #333;
+}
+.state-screen .quit:hover {
+	color: #fff;
+	opacity: 1;
+}
+.state-screen .quit:active {
+	color: #fff;
+	opacity: 1;
+	background: black;
+}
+input[name=state-screen]:checked + .state-screen {
+	display: block;
+}
+
+form > menu {
+	list-style: none;
+}
+form > menu li {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+form > menu li label {
+	display: block;
+	margin: 0 1em;
+}
+form > menu li:first-of-type label {
+	margin-left: 2em;
+}
+form > menu li:last-of-type label {
+	margin-right: 2em;
+}
+
+#options {
+
+}
+
+#areas {
+	height: 10rem;
+}
+#areas nav {
+	height: 100%;
+}
+#areas nav ol {
+	overflow: hidden;
+	list-style: none;
+	height: 20%;
+}
+#areas nav ol li {
+	position: relative;
+	float: left;
+	width: 20%;
+	height: 100%;
+}
+#areas nav ol li button {
+	display: block;
+	box-sizing: border-box;
+	padding: 0;
+	font-size: 0.5rem;
+	width: 100%;
+	height: 100%;
+
+	border-color: #333;
+	background: #666;
+	color: #aaa;
+}
+#areas nav ol:nth-of-type(3) li:nth-of-type(3) button {
+	border-color: #fff;
+	background: #666;
+	color: #fff;
+}
+#areas nav ol li button:disabled {
+	border-color: #000;
+	background: #333;
+	color: transparent;
+}
+
+#items {
+
+}
+
+/*main {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -101,4 +235,4 @@ button {
 button:active {
 	background: black;
 	color: white;
-}
+}*/

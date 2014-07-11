@@ -76,7 +76,39 @@ function randPara(nodeList) {
 	return t;
 }
 
+/**
+ * Constructs the 5x5 navigation grid.
+ */
+function buildNav() {
+	var
+		x,
+		y,
+		max = 5,
+
+		ol,
+		li,
+		button,
+
+		nav = document.querySelector("form nav"),
+	$;
+
+	for(y = 1; y <= max; y++) {
+		ol = document.createElement("ol");
+		nav.appendChild(ol);
+
+		for(x = 1; x <= max; x++) {
+			li = document.createElement("li");
+			button = document.createElement("button")
+			button.disabled = true;
+
+			li.appendChild(button);
+			ol.appendChild(li);
+		}
+	}
+}
+
 // On page load, while the first request is being made, a random quote is typed.
 type(randPara(main.querySelectorAll("p")));
+buildNav();
 
 })();
