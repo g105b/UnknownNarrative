@@ -233,7 +233,11 @@ function update_callback() {
 	$;
 	console.log(obj);
 
-	save();
+	if(!localStorage["save-game"]
+	|| localStorage["save-game"] < (+new Date) - (1000 * 60) ) {
+		localStorage["save-game"] = +new Date;
+		save();
+	}
 }
 
 // On page load, while the first request is being made, a random quote is typed.
