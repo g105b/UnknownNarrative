@@ -41,8 +41,37 @@ main {
 	left: 0;
 	right: 0;
 	bottom: 4rem;
+	overflow: hidden;
 	padding: 0.5rem;
+
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
 }
+main p {
+	margin-bottom: 1em;;
+}
+main p:last-of-type {
+	margin-bottom: 30vh;
+}
+main p:last-of-type::after {
+	content: "|";
+}
+main p:last-of-type.stale::after {
+	-webkit-animation: ibeam 1s infinite steps(1);
+	animation: ibeam 1s infinite steps(1);
+}
+
+@-webkit-keyframes ibeam {
+	50% {
+		opacity: 0;
+	}
+}
+@keyframes ibeam {
+	50% {
+		opacity: 0;
+	}
+}
+
 form {
 	position: fixed;
 	bottom: 0;
@@ -151,6 +180,9 @@ form > menu li:last-of-type label {
 	border-color: #000;
 	background: #333;
 	color: #555;
+}
+#areas nav ol li button:empty::after {
+	content: "?";
 }
 
 /* ITEMS **********************************************************************/
