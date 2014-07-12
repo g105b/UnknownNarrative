@@ -3,6 +3,14 @@ var
 	main = document.querySelector("main"),
 	itemsPocket = document.querySelector("#items #items-pockets"),
 	itemsAround = document.querySelector("#items #items-around"),
+
+	typeVariability = 10.0,
+	speedUp = 1.0,
+
+	errorCharProbability = 0.01,
+	longChar = 500,
+	mediumChar = 200,
+	shortChar = 50,
 $;
 
 /**
@@ -31,7 +39,7 @@ function type(msg, addTo) {
 		chars = (msg instanceof Array)
 			? msg
 			: msg.split(""),
-		c = chars.shift(),
+		c,
 		t,
 	$;
 
@@ -39,6 +47,27 @@ function type(msg, addTo) {
 		addTo = document.createElement("p");
 		main.insertBefore(addTo, main.firstChild);
 	}
+
+	if(chars[0].charCodeAt(0) >= 97 
+	&& chars[0].charCodeAt(0) <= 97 + 26) {
+		if(Math.random() <= errorCharProbability) {
+			addTo.textContent += String.fromCharCode(
+				Math.round(97 + (Math.random() * 26))
+			);
+			
+			setTimeout(function() {
+				addTo.textContent = addTo.textContent.substring(0, 
+					addTo.textContent.length - 1);
+
+				setTimeout(function() {
+					type(chars, addTo);
+				}, mediumChar);
+			}, mediumChar)
+			return;
+		}		
+	}
+	
+	c = chars.shift();
 
 	if(!c) {
 		update();
@@ -51,23 +80,25 @@ function type(msg, addTo) {
 	case ".":
 	case "!":
 	case "?":
-		t = 500;
+		t = longChar;
 		break;
 		
 	case ",":
 	case ":":
 	case ";":
-		t = 200;
+		t = mediumChar;
 		break;
 
 	default:
-		t = 50;
+		t = shortChar;
 		break;
 	}
 
+	t = t + (typeVariability + (Math.random() * typeVariability));
+
 	setTimeout(function() {
 		type(chars, addTo);
-	}, t);
+	}, t * speedUp);
 }
 
 /**
