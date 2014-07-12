@@ -4,8 +4,11 @@ var
 	itemsPocket = document.querySelector("#items #items-pockets"),
 	itemsAround = document.querySelector("#items #items-around"),
 
-	typeVariability = 10.0,
-	speedUp = 1.0,
+	startDelay = 2500,
+	scrollMainDelay = 5000,
+
+	typeVariability = 3,
+	speedUp = 0.5,
 
 	errorCharProbability = 0.01,
 	longChar = 500,
@@ -31,10 +34,33 @@ function x(method, command, obj, callback) {
 	xhr.send(obj);
 }
 
+function newParagraph() {
+	var p = document.createElement("p");
+	p.classList.add("stale");
+	main.appendChild(p);
+
+	return p;
+}
+
+function scrollMain(dt) {
+	var
+		currentScroll = main.scrollTop++,
+	$;
+
+	if(!dt) {
+		setTimeout(scrollMain, scrollMainDelay);		
+	}
+
+	if(main.scrollTop != currentScroll) {
+		main.scrollTop++;
+		requestAnimationFrame(scrollMain);
+	}
+}
+
 /**
  * Self-invoking function used to initiate typing a message to the main output.
  */
-function type(msg, addTo) {
+function type(msg, addTo, delay) {
 	var
 		chars = (msg instanceof Array)
 			? msg
@@ -44,20 +70,28 @@ function type(msg, addTo) {
 	$;
 
 	if(!addTo) {
-		addTo = document.createElement("p");
-		main.insertBefore(addTo, main.firstChild);
+		addTo = newParagraph();
 	}
 
-	if(chars[0].charCodeAt(0) >= 97 
+	if(delay) {
+		setTimeout(function() {
+			type(msg, addTo);
+		}, delay);
+		return;
+	}
+
+
+	if(chars[0]
+	&& chars[0].charCodeAt(0) >= 97 
 	&& chars[0].charCodeAt(0) <= 97 + 26) {
 		if(Math.random() <= errorCharProbability) {
-			addTo.textContent += String.fromCharCode(
+			addTo.innerHTML += String.fromCharCode(
 				Math.round(97 + (Math.random() * 26))
 			);
 			
 			setTimeout(function() {
-				addTo.textContent = addTo.textContent.substring(0, 
-					addTo.textContent.length - 1);
+				addTo.innerHTML = addTo.innerHTML.substring(0, 
+					addTo.innerHTML.length - 1);
 
 				setTimeout(function() {
 					type(chars, addTo);
@@ -70,35 +104,71 @@ function type(msg, addTo) {
 	c = chars.shift();
 
 	if(!c) {
+		addTo.classList.add("stale");
 		update();
 		return;
 	}
 
-	addTo.textContent += c;
+	addTo.innerHTML += c;
 
 	switch(c) {
+	case "\n":
+		addTo = newParagraph();
+		t = mediumChar;
+		break;
+
+	case "*":
+		addTo = emphasise(addTo, "strong");
+		break;
+
+	case "_":
+		addTo = emphasise(addTo, "em");
+		break;
+
 	case ".":
 	case "!":
 	case "?":
+		addTo.classList.add("stale");
 		t = longChar;
 		break;
 		
 	case ",":
 	case ":":
 	case ";":
+		addTo.classList.add("stale");
 		t = mediumChar;
 		break;
 
 	default:
+		addTo.classList.remove("stale");
 		t = shortChar;
 		break;
 	}
 
-	t = t + (typeVariability + (Math.random() * typeVariability));
+	t = t * (Math.random() * typeVariability);
 
 	setTimeout(function() {
 		type(chars, addTo);
 	}, t * speedUp);
+}
+
+function emphasise(el, tagName) {
+	var 
+		returnEl = el,
+	$;
+
+	el.innerHTML = el.innerHTML.substring(0, el.innerHTML.length - 1);
+
+	if(el.tagName == "P") {
+		el = document.createElement(tagName);
+		returnEl.appendChild(el);
+		returnEl = el;
+	}
+	else {
+		returnEl = el.parentNode;
+	}
+
+	return returnEl;
 }
 
 /**
@@ -108,7 +178,7 @@ function type(msg, addTo) {
 function randPara(nodeList) {
 	var 
 		i = ~~(Math.random() * nodeList.length),
-		t = nodeList[i].textContent,
+		t = nodeList[i].innerHTML,
 		p = nodeList[0].parentNode,
 	$;
 	
@@ -145,6 +215,10 @@ function buildNav() {
 			button.disabled = true;
 			button.name = "position";
 			button.value = (x - 3) + "/" + (y - 3);
+
+			if(x == 3 && y == 3) {
+				button.textContent = "Here";
+			}
 
 			li.appendChild(button);
 			ol.appendChild(li);
@@ -277,7 +351,7 @@ function update_callback() {
 }
 
 // On page load, while the first request is being made, a random quote is typed.
-type(randPara(main.querySelectorAll("p")));
+type(randPara(main.querySelectorAll("p")), null, startDelay);
 buildNav();
 
 itemsPocket.addEventListener("mousewheel", e_scroll_horizontal);
@@ -285,5 +359,6 @@ itemsAround.addEventListener("mousewheel", e_scroll_horizontal);
 document.forms[0].addEventListener("submit", update);
 
 save();
+setTimeout(scrollMain, scrollMainDelay);
 
 })();
