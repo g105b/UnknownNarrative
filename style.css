@@ -9,6 +9,7 @@ html {
 	font-size: 16px;
 }
 html, body {
+	overflow: hidden;
 	margin: 0;
 	min-height: 100%;
 	background: black;
@@ -37,23 +38,26 @@ button:active, label:active {
 /* UI *************************************************************************/
 main {
 	position: absolute;
+	padding: 0.5rem;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 4rem;
-	overflow: hidden;
-	padding: 0.5rem;
-
-	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-bottom: 75vh;
+}
+main::-webkit-scrollbar,
+main::-webkit-scrollbar-track {
+	display: none;
 }
 main p {
-	margin-bottom: 1em;;
+	margin-bottom: 1em;
 }
 main p:last-of-type {
-	margin-bottom: 30vh;
 }
 main p:last-of-type::after {
+	position: absolute;
 	content: "|";
 }
 main p:last-of-type.stale::after {

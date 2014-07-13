@@ -4,8 +4,9 @@ var
 	itemsPocket = document.querySelector("#items #items-pockets"),
 	itemsAround = document.querySelector("#items #items-around"),
 
+	type_timeout,
 	startDelay = 2500,
-	scrollMainDelay = 5000,
+	scrollCheckerDelay = 5000,
 
 	typeVariability = 3,
 	speedUp = 0.5,
@@ -42,17 +43,26 @@ function newParagraph() {
 	return p;
 }
 
+function scrollChecker() {
+	var 
+		p = main.lastChild,
+		y = p.offsetTop + p.offsetHeight - main.scrollTop,
+	$;
+	// Check that the paragraph is nearing the bottom of the screen.
+	if(y > window.innerHeight * 0.6) {
+		scrollMain();
+	}
+	else {
+		setTimeout(scrollChecker, scrollCheckerDelay);
+	}
+}
+
 function scrollMain(dt) {
-	var
+	var 
 		currentScroll = main.scrollTop++,
 	$;
 
-	if(!dt) {
-		setTimeout(scrollMain, scrollMainDelay);		
-	}
-
 	if(main.scrollTop != currentScroll) {
-		main.scrollTop++;
 		requestAnimationFrame(scrollMain);
 	}
 }
@@ -74,9 +84,10 @@ function type(msg, addTo, delay) {
 	}
 
 	if(delay) {
-		setTimeout(function() {
+		type_timeout = setTimeout(function() {
 			type(msg, addTo);
 		}, delay);
+
 		return;
 	}
 
@@ -146,10 +157,12 @@ function type(msg, addTo, delay) {
 	}
 
 	t = t * (Math.random() * typeVariability);
+	t = t * speedUp;
 
-	setTimeout(function() {
+	type_timeout = setTimeout(function() {
+		type_timeout = null;
 		type(chars, addTo);
-	}, t * speedUp);
+	}, t);
 }
 
 function emphasise(el, tagName) {
@@ -359,6 +372,6 @@ itemsAround.addEventListener("mousewheel", e_scroll_horizontal);
 document.forms[0].addEventListener("submit", update);
 
 save();
-setTimeout(scrollMain, scrollMainDelay);
+setTimeout(scrollChecker, scrollCheckerDelay);
 
 })();
