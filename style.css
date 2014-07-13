@@ -64,6 +64,13 @@ main p:last-of-type.stale::after {
 	-webkit-animation: ibeam 1s infinite steps(1);
 	animation: ibeam 1s infinite steps(1);
 }
+main hr {
+	border: none;
+	width: 80%;
+	height: 2px;
+	background: #fff;
+	margin: 2em auto;
+}
 
 @-webkit-keyframes ibeam {
 	50% {
