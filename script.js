@@ -1,5 +1,6 @@
 (function() {
 var
+	pause = false,
 	main = document.querySelector("main"),
 	itemsPocket = document.querySelector("#items #items-pockets"),
 	itemsAround = document.querySelector("#items #items-around"),
@@ -48,6 +49,9 @@ function scrollChecker() {
 		p = main.lastChild,
 		y = p.offsetTop + p.offsetHeight - main.scrollTop,
 	$;
+
+	pause = false;
+
 	// Check that the paragraph is nearing the bottom of the screen.
 	if(y > window.innerHeight * 0.6) {
 		scrollMain();
@@ -65,6 +69,7 @@ function scrollMain(dt) {
 	// Disable auto scroller if user has moved the scroll up.
 	if(main.hasAttribute("data-scroll")) {
 		if(main.scrollTop < main.getAttribute("data-scroll")) {
+			pause = true;
 			setTimeout(scrollChecker, scrollCheckerDelay);
 			return;
 		}
@@ -90,6 +95,13 @@ function type(msg, addTo, delay) {
 		c,
 		t,
 	$;
+
+	if(pause && chars && chars[0] == "\n") {
+		setTimeout(function() {
+			type(msg, addTo, delay);
+		}, 1000);
+		return;
+	}
 
 	if(!addTo) {
 		addTo = newParagraph();
