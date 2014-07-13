@@ -26,13 +26,23 @@ public function __call($name, $args) {
 	}
 
 	$sql = file_get_contents($sqlPath);
-	$params = $args[0];
+	$params = [];
+
+	if(!empty($args)) {
+		$params = $args[0];		
+	}
+
+	$params["ID_Player"] = $_COOKIE["save-game"];
 
 	try {
 		$stmt = $this->dbh->prepare($sql);
 
 		foreach ($params as $key => $value) {
-			$stmt->bindValue(":" . $key, $value);
+			$paramKey = ":" . $key;
+
+			if(strstr($sql, $paramKey)) {
+				$stmt->bindValue($paramKey, $value);
+			}
 		}
 
 		$stmt->execute();		
@@ -41,12 +51,110 @@ public function __call($name, $args) {
 		return new Database_Error($e->getMessage());
 	}
 
-	return $stmt->fetchAll(Dal::FETCH_CLASS, "Game\Database_Result");
+	return new Database_Result($stmt);
 }
 
 }#Database
 
-class Database_Result extends Response implements \JsonSerializable {
+class Database_Result implements \Iterator, \ArrayAccess, \JsonSerializable {
+
+private $rows;
+private $rowIndex = null;
+
+public function __construct($stmt) {
+	$this->stmt = $stmt;
+
+}
+
+public function __get($name) {
+	switch($name) {
+	case "length":
+		$this->fetch();
+		return count($this->rows);
+
+		break;
+
+	default:
+		$this->fetch();
+		return $this->rows[0]->$name;
+		break;
+	}
+}
+
+private function fetch() {
+	if(is_null($this->rowIndex)) {
+		$this->rowIndex = 0;
+		$this->rows = $this->stmt->fetchAll(
+			Dal::FETCH_CLASS, "Game\Database_Result_Row"
+		);		
+	}
+}
+
+public function jsonSerialize() {
+	$this->fetch();
+	return $this->rows;
+}
+
+// Iterator ----------------------------------------------------------------
+public function current() {
+	$this->fetch();
+	return $this->rows[$this->rowIndex];
+}
+
+public function key() {
+	$this->fetch();
+	return $this->rowIndex;
+}
+
+public function next() {
+	$this->fetch();
+	++$this->rowIndex;
+}
+
+public function rewind() {
+	$this->fetch();
+	$this->rowIndex = 0;
+}
+
+public function valid() {
+	$this->fetch();
+	return isset($this->rows[$this->rowIndex]);
+}
+// End: Iterator -----------------------------------------------------------
+
+// ArrayAccess -------------------------------------------------------------
+public function offsetExists($offset) {
+	if(!is_numeric($offset)) {
+		// Looking for the first result's column.
+		if(isset($this->rows[0])) {
+			return array_key_exists($offset, $this->rows[0]);
+		}
+	}
+			
+	return array_key_exists($offset, $this->rows);
+}
+
+public function offsetGet($offset) {
+	if(!is_numeric($offset)) {
+		if(isset($this->rows[0])) {
+			return $this->rows[0][$offset];
+		}
+	}
+	return $this->rows[$offset];
+}
+
+public function offsetSet($offset, $value) {
+	throw new BadMethodCallException("Trying to set a result field.");
+}
+
+public function offsetUnset($offset) {
+	throw new BadMethodCallException("Trying to unset a result field.");
+}
+
+}#Database_Result
+
+// TODO: Maybe we don't need jsonserialisable...
+class Database_Result_Row extends Response implements \JsonSerializable {
 
 public function jsonSerialize() {
 	return "TEST FROM OUTPUT";
