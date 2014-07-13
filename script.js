@@ -13,6 +13,7 @@ var
 	speedUp = 0.5,
 
 	errorCharProbability = 0.01,
+	waitChar = 1500,
 	longChar = 500,
 	mediumChar = 200,
 	shortChar = 50,
@@ -150,6 +151,16 @@ function type(msg, addTo, delay) {
 	case "\n":
 		addTo = newParagraph();
 		t = mediumChar;
+		break;
+
+	case "~":
+		addTo.innerHTML = addTo.innerHTML.substring(0, 
+			addTo.innerHTML.length - 1);
+
+		main.appendChild(document.createElement("hr"));
+
+		addTo = newParagraph();
+		t = waitChar;
 		break;
 
 	case "*":
@@ -349,7 +360,7 @@ function save(callback) {
 }
 
 function save_callback(callback) {
-	console.log("Game saved...");
+	console.log("Game saved.");
 
 	if(callback) {
 		callback();
@@ -368,7 +379,7 @@ function update(e) {
 
 	if(e) {
 		method = "post";
-		// TODO: Build up obj.		
+		// TODO: Build up obj.
 	}
 
 	x(method, "game", obj, update_callback);
@@ -388,7 +399,7 @@ function update_callback() {
 }
 
 // On page load, while the first request is being made, a random quote is typed.
-type(randPara(main.querySelectorAll("p")), null, startDelay);
+type(randPara(main.querySelectorAll("p")) + "~", null, startDelay);
 buildNav();
 
 itemsPocket.addEventListener("mousewheel", e_scroll_horizontal);
