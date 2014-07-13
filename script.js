@@ -62,8 +62,20 @@ function scrollMain(dt) {
 		currentScroll = main.scrollTop++,
 	$;
 
+	// Disable auto scroller if user has moved the scroll up.
+	if(main.hasAttribute("data-scroll")) {
+		if(main.scrollTop < main.getAttribute("data-scroll")) {
+			setTimeout(scrollChecker, scrollCheckerDelay);
+			return;
+		}
+	}
+
 	if(main.scrollTop != currentScroll) {
+		main.setAttribute("data-scroll", main.scrollTop);
 		requestAnimationFrame(scrollMain);
+	}
+	else {
+		setTimeout(scrollChecker, scrollCheckerDelay);
 	}
 }
 
