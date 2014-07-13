@@ -63,8 +63,8 @@ public function __construct($msg) {
 }
 
 public function jsonSerialize() {
-	$this->obj->error = $this->msg;
-	return $this->obj;
+	$this->error = $this->msg;
+	return $this;
 }
 
 }#Database_Error
