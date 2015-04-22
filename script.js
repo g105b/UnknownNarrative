@@ -17,16 +17,16 @@ var
 	longChar = 500,
 	mediumChar = 200,
 	shortChar = 50,
-$;
+$$;
 
 /**
  * Shorthand function for XMLHttpRequest.
  */
 function x(method, command, obj, callback) {
-	var 
+	var
 		xhr = new XMLHttpRequest(),
 		url = command + ".php",
-	$;
+	$$;
 
 	xhr.open(method, url, true);
 	xhr.addEventListener("load", callback);
@@ -46,10 +46,10 @@ function newParagraph() {
 }
 
 function scrollChecker() {
-	var 
+	var
 		p = main.lastChild,
 		y = p.offsetTop + p.offsetHeight - main.scrollTop,
-	$;
+	$$;
 
 	pause = false;
 
@@ -63,9 +63,9 @@ function scrollChecker() {
 }
 
 function scrollMain(dt) {
-	var 
+	var
 		currentScroll = main.scrollTop++,
-	$;
+	$$;
 
 	// Disable auto scroller if user has moved the scroll up.
 	if(main.hasAttribute("data-scroll")) {
@@ -95,7 +95,7 @@ function type(msg, addTo, delay) {
 			: msg.split(""),
 		c,
 		t,
-	$;
+	$$;
 
 	if(pause && chars && chars[0] == "\n") {
 		setTimeout(function() {
@@ -118,15 +118,15 @@ function type(msg, addTo, delay) {
 
 
 	if(chars[0]
-	&& chars[0].charCodeAt(0) >= 97 
+	&& chars[0].charCodeAt(0) >= 97
 	&& chars[0].charCodeAt(0) <= 97 + 26) {
 		if(Math.random() <= errorCharProbability) {
 			addTo.innerHTML += String.fromCharCode(
 				Math.round(97 + (Math.random() * 26))
 			);
-			
+
 			setTimeout(function() {
-				addTo.innerHTML = addTo.innerHTML.substring(0, 
+				addTo.innerHTML = addTo.innerHTML.substring(0,
 					addTo.innerHTML.length - 1);
 
 				setTimeout(function() {
@@ -134,9 +134,9 @@ function type(msg, addTo, delay) {
 				}, mediumChar);
 			}, mediumChar)
 			return;
-		}		
+		}
 	}
-	
+
 	c = chars.shift();
 
 	if(!c) {
@@ -154,7 +154,7 @@ function type(msg, addTo, delay) {
 		break;
 
 	case "~":
-		addTo.innerHTML = addTo.innerHTML.substring(0, 
+		addTo.innerHTML = addTo.innerHTML.substring(0,
 			addTo.innerHTML.length - 1);
 
 		main.appendChild(document.createElement("hr"));
@@ -177,7 +177,7 @@ function type(msg, addTo, delay) {
 		addTo.classList.add("stale");
 		t = longChar;
 		break;
-		
+
 	case ",":
 	case ":":
 	case ";":
@@ -201,9 +201,9 @@ function type(msg, addTo, delay) {
 }
 
 function emphasise(el, tagName) {
-	var 
+	var
 		returnEl = el,
-	$;
+	$$;
 
 	el.innerHTML = el.innerHTML.substring(0, el.innerHTML.length - 1);
 
@@ -224,12 +224,12 @@ function emphasise(el, tagName) {
  * their parent.
  */
 function randPara(nodeList) {
-	var 
+	var
 		i = ~~(Math.random() * nodeList.length),
 		t = nodeList[i].innerHTML,
 		p = nodeList[0].parentNode,
-	$;
-	
+	$$;
+
 	while(p.firstChild) {
 		p.removeChild(p.firstChild);
 	}
@@ -251,7 +251,7 @@ function buildNav() {
 		button,
 
 		nav = document.querySelector("form nav"),
-	$;
+	$$;
 
 	for(y = 1; y <= max; y++) {
 		ol = document.createElement("ol");
@@ -284,14 +284,14 @@ function item_add(name, list, quantity) {
 		input,
 		label,
 		id,
-	$;
+	$$;
 
 	if(!list) {
 		list = itemsPocket;
 	}
 
 	id = "item-"
-		+ list.getAttribute("data-container") 
+		+ list.getAttribute("data-container")
 		+ "-"
 		+ idName;
 
@@ -321,8 +321,8 @@ function item_add(name, list, quantity) {
 		li.appendChild(label);
 
 		input.id = id;
-		input.name = "item-" 
-			+ list.getAttribute("data-container") 
+		input.name = "item-"
+			+ list.getAttribute("data-container")
 			+ "[]";
 		input.value = idName;
 		input.type = "checkbox";
@@ -369,13 +369,13 @@ function save_callback(callback) {
 
 function update(e) {
 	if(e) {
-		e.preventDefault();		
+		e.preventDefault();
 	}
 
-	var 
+	var
 		obj = {},
 		method = "get",
-	$;
+	$$;
 
 	if(e) {
 		method = "post";
@@ -388,7 +388,7 @@ function update(e) {
 function update_callback() {
 	var
 		obj = JSON.parse(this.responseText),
-	$;
+	$$;
 	console.log(obj);
 
 	if(!localStorage["save-game"]

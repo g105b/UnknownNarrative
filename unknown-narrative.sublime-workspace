@@ -4,93 +4,45 @@
 		"selected_items":
 		[
 			[
-				"exec",
-				"executeScript"
+				"index",
+				"iteratorIndex"
 			],
 			[
-				"_ses",
-				"_currentSessionName"
+				"SCRIPT",
+				"SCRIPT_STYLE_LIST"
 			],
 			[
-				"histo",
-				"historyObj"
+				"assertFile",
+				"assertFileExists"
 			],
 			[
-				"hist",
-				"historyObj"
+				"rel",
+				"relativePath"
 			],
 			[
-				"op",
-				"option	Tag"
-			],
-			[
-				"dr",
-				"drinksList"
-			],
-			[
-				"_",
-				"_deciderObjs"
-			],
-			[
-				"widt",
-				"width_aside"
-			],
-			[
-				"bakgro",
-				"background-position"
-			],
-			[
-				"wid",
-				"width_aside"
-			],
-			[
-				"tea",
-				"teabag_hit"
-			],
-			[
-				"_win",
-				"_winAction"
-			],
-			[
-				"game",
-				"gameObj"
-			],
-			[
-				"heaed",
-				"header_height"
-			],
-			[
-				"src",
-				"srcAttr"
+				"Reader",
+				"reader"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "README.md",
+			"file": "script.js",
 			"settings":
 			{
-				"buffer_size": 69,
+				"buffer_size": 7322,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"contents": "<?php\nnamespace Game;\n\n// require \"Class/Response.php\";\n// require \"Class/Database.php\";\n\n$db = new Database();\n\n$response = $db->getPlayer([\"ID_Player\" => $_COOKIE[\"save-game\"]]);\n\nif(!empty($_POST)) {\n\n}\n\nheader(\"Content-Type: application/json\");\necho json_encode($response);",
+			"file": "game.php",
+			"file_size": 293,
+			"file_write_time": 130732539647204528,
 			"settings":
 			{
-				"buffer_size": 112,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "@font-face",
-			"file": "style.css",
-			"file_size": 0,
-			"file_write_time": 130494951927959571,
-			"settings":
-			{
-				"buffer_size": 10,
+				"buffer_size": 277,
 				"line_ending": "Unix"
 			}
 		}
@@ -98,78 +50,30 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 75.0,
+		"height": 96.0,
 		"selected_items":
 		[
-			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"xdereset",
-				"Xdebug: Restore Layout"
-			],
-			[
-				"xdebug",
-				"Xdebug: Start Debugging"
-			],
-			[
-				"restart",
-				"Xdebug: Restart Session"
-			],
-			[
-				"xdebu",
-				"Xdebug: Restore Layout"
-			],
-			[
-				"xdebug start",
-				"Xdebug: Start Debugging"
-			],
-			[
-				"stop",
-				"Xdebug: Stop Debugging"
-			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"push",
-				"Git: Push"
+				"refactor",
+				"PHPSimpleRefactor: extract current lines to method"
 			],
 			[
-				"status",
-				"Git: Status"
-			],
-			[
-				"pull",
-				"Git: Pull"
-			],
-			[
-				"checkout new",
-				"Git: Checkout New Branch"
-			],
-			[
-				"checkout",
-				"Git: Checkout"
-			],
-			[
-				"sublimegit",
-				"SublimeGit: Add License"
-			],
-			[
-				"install packe",
-				"Package Control: Install Package"
+				"refact",
+				"PHPSimpleRefactor: extract current lines to method"
 			]
 		],
-		"width": 449.0
+		"width": 476.0
 	},
 	"console":
 	{
-		"height": 153.0,
+		"height": 139.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -181,147 +85,154 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/g105b/Webroot/unknown-narrative",
+		"/home/g105b/Webroot/unknown-narrative/Class",
+		"/home/g105b/Webroot/unknown-narrative/Service"
+	],
 	"file_history":
 	[
-		"/home/g105b/GregPixel.woff",
-		"/home/g105b/Downloads/minecraftia/pixel.ttf",
-		"/home/g105b/Webroot/teawars/Test/Features/Bootstrap/FeatureContext.php",
-		"/home/g105b/Webroot/teawars/Test/Features/Bombing.feature",
-		"/home/g105b/Webroot/teawars/Database/Action/Bomb.sql",
-		"/home/g105b/Webroot/teawars/Script/Go/Battle.js",
-		"/home/g105b/Webroot/teawars/Script/Namespace/PP.js",
-		"/home/g105b/Webroot/teawars/PageCode/Battle.php",
-		"/home/g105b/Webroot/teawars/Script/Namespace/Spinner.js",
-		"/home/g105b/Webroot/teawars/Style/Component/Decider.scss",
-		"/home/g105b/Webroot/teawars/Test/Features/PlayerPositions.feature",
-		"/home/g105b/Webroot/teawars/Test/Features/GameCreateJoin.feature",
-		"/home/g105b/Webroot/teawars/PageView/_Footer.html",
-		"/home/g105b/Webroot/teawars/PageView/Feedback.html",
-		"/home/g105b/Webroot/teawars/Config/Analytics_Config.cfg.php",
-		"/home/g105b/Webroot/teawars/Script/Go/_Common.js",
-		"/home/g105b/Webroot/teawars/Database/Game/CloseEmpty.sql",
-		"/home/g105b/Webroot/teawars/Test/_RunBusinessTests.sh",
-		"/home/g105b/Webroot/teawars/Style/Component/MainForm.scss",
-		"/home/g105b/Webroot/teawars/Style/Component/Animation.scss",
-		"/home/g105b/Webroot/teawars/Style/PageStyle/Battle.scss",
-		"/home/g105b/Webroot/teawars/PageView/Battle.html",
-		"/home/g105b/Webroot/teawars/PageCode/_Common.php",
-		"/home/g105b/Webroot/teawars/Database/Game/Leave.sql",
-		"/home/g105b/Webroot/teawars/Class/Game/Game.class.php",
-		"/home/g105b/Webroot/teawars/PageCode/Join.php",
-		"/home/g105b/Webroot/teawars/Database/Game/GetEntered.sql",
-		"/home/g105b/Webroot/teawars/Database/Game/GetPositions.sql",
-		"/home/g105b/Webroot/teawars/Database/Game/Join.sql",
-		"/home/g105b/Webroot/teawars/PageView/Join.html",
-		"/home/g105b/Webroot/teawars/PageCode/Index.php",
-		"/home/g105b/Webroot/teawars/PageView/Index.html",
-		"/home/g105b/Webroot/teawars/Script/Go/Index.js",
-		"/home/g105b/Webroot/teawars/Database/Game/Enter.sql",
-		"/home/g105b/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/g105b/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/g105b/Webroot/teawars/Database/Game/GetPositionOfAppUser.sql",
-		"/home/g105b/Webroot/teawars/PageCode/Locked.php",
-		"/home/g105b/Webroot/teawars/PageView/Locked.html",
-		"/home/g105b/Webroot/teawars/Database/Game/GetTotalInGame.sql",
-		"/home/g105b/Webroot/teawars/Style/Component/Common.scss",
-		"/home/g105b/Webroot/teawars/Database/Action/GetAll.sql",
-		"/home/g105b/Webroot/teawars/Database/Action/_CreateTable-001-Action.sql",
-		"/home/g105b/Webroot/teawars/Database/Game/SetActive.sql",
-		"/home/g105b/Webroot/teawars/Database/Game/GetByName.sql",
-		"/home/g105b/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
-		"/home/g105b/.config/sublime-text-3/Packages/Xdebug Client/Xdebug.sublime-settings",
-		"/home/g105b/Webroot/teawars/Database/Action/Hit.sql",
-		"/home/g105b/Webroot/teawars/Script/Namespace/Sound.js",
-		"/home/g105b/Webroot/teawars/Default.log",
-		"/home/g105b/Webroot/teawars/Style/Component/Mixins.scss",
-		"/home/g105b/Webroot/teawars/Style/Main.scss",
-		"/home/g105b/Webroot/teawars/PageView/_Header.html",
-		"/home/g105b/Webroot/teawars/www/Style_416998d28132d493ed9eb83a7960566b/Main.css",
-		"/home/g105b/Webroot/teawars/Config/Auth_Config.cfg.php",
-		"/home/g105b/Webroot/teawars/Style/PageStyle/Index.scss",
-		"/home/g105b/Webroot/teawars/Config/App.cfg.php",
-		"/home/g105b/Webroot/teawars/www/Style/Font/Roboto/RobotoThin.woff",
-		"/home/g105b/.local/share/applications/Gmail.desktop",
-		"/home/g105b/Webroot/teawars/PageCode/Locked.phpp",
-		"/home/g105b/Webroot/teawars/Style/PageStyle/Locked.scss",
-		"/home/g105b/Webroot/teawars/Database/Game/SetPosition.sql",
-		"/home/g105b/Webroot/teawars/Test/Features/Game.feature",
-		"/home/g105b/Webroot/teawars/Database/AppUser/SetDetails.sql",
-		"/home/g105b/Webroot/teawars/Style/Component/Variables.scss",
-		"/home/g105b/Webroot/teawars/Style/Common/Animation.scss",
-		"/home/g105b/Webroot/teawars/www/Style/Go/Battle.js",
-		"/home/g105b/Webroot/teawars/www/Script_c7780e4802858955a541e95d8116447a/Go/Battle.js",
-		"/home/g105b/Webroot/teawars/www/Style/Font/Ubuntu/UbuntuMonoItalic.woff",
-		"/home/g105b/Webroot/teawars/Database/AppUser/SetLastGameName.sql",
-		"/home/g105b/Webroot/teawars/www/Style/Navigation/Navigation.tool.php",
-		"/home/g105b/Webroot/teawars/Style/JS/teabag-bomb_edgeActions.js",
-		"/home/g105b/Webroot/teawars/www/StyleScriptFiles.cache",
-		"/home/g105b/Webroot/teawars/Style/Common/Common.scss",
-		"/home/g105b/Webroot/teawars/Database/AppUser/GetByID.sql",
-		"/home/g105b/Webroot/teawars/Style/Common/Mixins.scss",
-		"/home/g105b/Webroot/teawars/Test/sel.log",
-		"/home/g105b/Webroot/teawars/Database/AppUser/_CreateTable-001-AppUser.sql",
-		"/home/g105b/Webroot/teawars/Database/Game/_CreateTable-002-Game__AppUser__position.sql",
-		"/home/g105b/Webroot/teawars/www/Go.php",
-		"/home/g105b/Webroot/teawars/Database/Game/_CreateTable-001-Game.sql",
-		"/home/g105b/Webroot/cfit/PageCode/Diary.php",
-		"/home/g105b/Webroot/cfit/Style/cfit.scss",
-		"/home/g105b/Webroot/cfit/Style/Main.scss",
-		"/home/g105b/Webroot/cfit/Style/PageStyle/Diary.scss",
-		"/home/g105b/Webroot/cfit/PageView/_Footer.html",
-		"/home/g105b/Webroot/cfit/PageView/_Header.html",
-		"/home/g105b/Webroot/cfit/PageView/Diary.html",
-		"/home/g105b/Webroot/cfit/PageView/Search.html",
-		"/home/g105b/Webroot/cfit/PageCode/_Common.php",
-		"/home/g105b/Webroot/cfit/Style/Common/Common.scss",
-		"/home/g105b/Webroot/cfit/PageView/Index.html",
-		"/home/g105b/Webroot/cfit/Style/sass-app/Main.scss",
-		"/home/g105b/Webroot/cfit/Style/sass-app/sass-app-demo.scss",
-		"/home/g105b/Webroot/cfit/Style/sass-app/sass-app.scss",
-		"/home/g105b/Webroot/cfit/PageView/Test.html",
-		"/home/g105b/Webroot/cfit/PageView/Binungungun.html",
-		"/home/g105b/Webroot/cfit/Script/Main.js",
-		"/home/g105b/Webroot/cfit/Style/_Common.scss",
-		"/home/g105b/Webroot/cfit/Script/Go/_Common.js",
-		"/home/g105b/Webroot/cfit/Script/Namespace/Pjax.js",
-		"/home/g105b/Webroot/cfit/PageView/Workout.html",
-		"/home/g105b/Webroot/cfit/Style/Index.scss",
-		"/home/g105b/Webroot/cfit/TODO.md",
-		"/home/g105b/Webroot/cfit/Script/Go/Index.js",
-		"/home/g105b/Webroot/cfit/PageView/Profile.html",
-		"/home/g105b/Webroot/cfit/www/Style/Html5.js",
-		"/home/g105b/Webroot/cfit/www/Style_314f545e96499d8022bb21da9245277d/Main.css",
-		"/home/g105b/Webroot/cfit/cfit.sublime-project",
-		"/home/g105b/Webroot/cfit/PageView/Home.html",
-		"/home/g105b/Webroot/cfit/Style/Loading.scss",
-		"/home/g105b/Webroot/cfit/PageView/Loading.html",
-		"/home/g105b/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/g105b/Webroot/cfit/www/Go.php",
-		"/home/g105b/Webroot/userauth-blueprint/userauth-blueprint.sublime-project",
-		"/home/g105b/Webroot/userauth-blueprint/Config/Auth_Config.cfg.php",
-		"/home/g105b/Webroot/userauth-blueprint/Style/Main.scss",
-		"/home/g105b/Webroot/userauth-blueprint/PageView/Index.html",
-		"/home/g105b/Webroot/userauth-blueprint/PageView/_Footer.html",
-		"/home/g105b/Webroot/userauth-blueprint/www/Go.php",
-		"/home/g105b/Webroot/userauth-blueprint/README.md",
-		"/home/g105b/Webroot/userauth-blueprint/.gitignore",
-		"/home/g105b/Webroot/PHP.Gt/Style/Font/Ubuntu.css",
-		"/home/g105b/Webroot/PHP.Gt/Class/Session/Session.class.php",
-		"/home/g105b/Webroot/PHP.Gt/Test/Class/Session.test.php",
-		"/home/g105b/Webroot/PHP.Gt/.gitignore",
-		"/home/g105b/Webroot/PHP.Gt/Class/Minifier/JShrink/tests/minify/uglify/expect/strict-equals.js",
-		"/home/g105b/Webroot/PHP.Gt/Config/Security.cfg.php"
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/Work/BowmerBond.md",
+		"/home/g105b/Downloads/GS/GS.html",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/Work/DerwentHydro.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2015-04-13 What is Facebook good for?.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2015-02-23 Raspberry Pi version 2.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2014-10-13 SSL, HTTPS and the little green padlock.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2014-09-29 The Illusion of Choice.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2014-07-00 Heartbleed.md !!TODO!!",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/What is Facebook good for?.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2014-12-15 Who even uses Linux anyway?.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/0000-00-00 SSL, HTTPS and the little green padlock.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/0000-00-00 Cancerous Code: Restrict its growth through peer review.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2015-04-01 Continuous integration at Bright Flair.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/0000-00-00 What is www, and is it necessary?.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/0000-00-00 Getting started with the terminal.md",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/_common.php",
+		"/home/g105b/Webroot/www.brightflair.com/composer.json",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/_variables.scss",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2014-09-30 The Illusion of Choice.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2015-02-22 Raspberry Pi version 2.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Blog/2013-09-30 The Illusion of Choice.md",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/Component/nav.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/base.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/_header.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/_footer.html",
+		"/home/g105b/Webroot/www.brightflair.com/vendor/brightflair/php.gt/src/Response/Headers.php",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/index.html",
+		"/home/g105b/Webroot/www.brightflair.com/config.ini",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/_variables.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/base-enhanced.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/footer.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/Component/tagline.scss",
+		"/home/g105b/Webroot/www.brightflair.com/vendor/symfony/css-selector/Symfony/Component/CssSelector/XPath/Extension/HtmlExtension.php",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/sitemap.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/privacy.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/terms.html",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/About/terms.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/About/glossary.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/About/privacy.md",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/faq.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/glossary.html",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/About/faq.md",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/nav.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/nav-enhanced.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/Component/banner.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/form.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/footer-enhanced.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/flair.scss",
+		"/home/g105b/Webroot/www.brightflair.com/vendor/brightflair/php.gt/src/ClientSide/FileOrganiser.php",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/Component/logo.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/www.brightflair.com.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/work.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/services.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/about.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/blog.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Page/contact.html",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/logo.scss",
+		"/home/g105b/Webroot/www.brightflair.com/LICENSE",
+		"/home/g105b/Webroot/www.brightflair.com/data/testimonials.md",
+		"/home/g105b/Webroot/brightflair/PageView/Index.html",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/home.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/service-intro.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/services.md",
+		"/home/g105b/Webroot/www.brightflair.com/data/Content/about-us.md",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/vendor/flair/Component/logo-enhanced.scss",
+		"/home/g105b/Webroot/www.brightflair.com/vendor/leafo/scssphp/tests/inputs/if_on_null.scss",
+		"/home/g105b/Webroot/www.brightflair.com/src/Asset/vendor/flair/Font/ubuntu.font.scss",
+		"/home/g105b/Webroot/www.brightflair.com/.gitignore",
+		"/home/g105b/Webroot/www.brightflair.com/bower.json",
+		"/home/g105b/Webroot/www.brightflair.com/.bowercc",
+		"/home/g105b/Webroot/www.brightflair.com/src/Style/brightflair.scss",
+		"/home/g105b/Webroot/PHP.Gt/vendor/behat/mink/driver-testsuite/web-fixtures/multi_input_form.html",
+		"/home/g105b/Webroot/PHP.Gt/ReadMe.md",
+		"/home/g105b/Webroot/PHP.Gt/bin/uninstall",
+		"/home/g105b/Webroot/PHP.Gt/bin/install",
+		"/home/g105b/Webroot/PHP.Gt/bin/create",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Source.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/DataSourceNotFoundException.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Data.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/leafo/scssphp/tests/inputs/default_args.scss",
+		"/home/g105b/Webroot/PHP.Gt/src/Dispatcher/DispatcherFactory.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Page/TemplateFactory.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Dom/Node.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/sebastian/comparator/src/DOMNodeComparator.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Dom/NodeMethodNotDefinedException.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/behat/mink/src/Element/DocumentElement.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Csv.php",
+		"/home/g105b/Webroot/PHP.Gt/composer.json",
+		"/home/g105b/Webroot/PHP.Gt/src/ClientSide/Compiler.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Response/ResponseCode.php",
+		"/home/g105b/Webroot/PHP.Gt/test/Unit/Cli/Gateway.test.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Store.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Source/Csv/CsvSource.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Source/Csv/CsvStore.php",
+		"/home/g105b/Webroot/PHP.Gt/test/Unit/Bootstrap.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/symfony/console/Symfony/Component/Console/Output/BufferedOutput.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/bin/behat",
+		"/home/g105b/Webroot/PHP.Gt/src/Api/Component.php",
+		"/home/g105b/Webroot/PHP.Gt/src/ThirdParty/Csv.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/satooshi/php-coveralls/tests/Satooshi/Bundle/CoverallsV1Bundle/Repository/JobsRepositoryTest.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/satooshi/php-coveralls/src/Satooshi/Bundle/CoverallsV1Bundle/Repository/JobsRepository.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/StoreDoesNotExistException.php",
+		"/home/g105b/Webroot/PHP.Gt/src/ThirdParty/ReadMe.md",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/Fetcher.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/behat/behat/features/annotations/stop_on_failure.feature",
+		"/home/g105b/Webroot/PHP.Gt/src/Core/Start.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Logic/PageLogic.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Dispatcher/PageDispatcher.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Dispatcher/Dispatcher.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Logic/Logic.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Logic/ApiLogic.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Logic/LogicFactory.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Api/Api.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/composer/autoload_psr4.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/autoload.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Api/Logic.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Cli/Gateway.php",
+		"/home/g105b/Webroot/PHP.Gt/vendor/phpunit/phpunit/src/Extensions/GroupTestSuite.php",
+		"/home/g105b/Webroot/PHP.Gt/default.ini",
+		"/home/g105b/Webroot/PHP.Gt/src/Data/DataFactory.php",
+		"/home/g105b/Webroot/PHP.Gt/License",
+		"/home/g105b/Webroot/PHP.Gt/bin/test",
+		"/home/g105b/Webroot/PHP.Gt/bin/serve",
+		"/home/g105b/Webroot/PHP.Gt/src/ClientSide/PathDetails.php",
+		"/home/g105b/Webroot/PHP.Gt/src/ClientSide/PageManifest.php",
+		"/home/g105b/Webroot/PHP.Gt/test/Unit/ClientSide/PageManifest.test.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Core/Path.php",
+		"/home/g105b/Webroot/PHP.Gt/src/Core/Exception/ObjectDetailNotFoundException.php"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
-		"height": 108.0,
+		"height": 105.0,
 		"where_history":
 		[
-			"/home/g105b/Webroot/teawars"
+			"/home/g105b/Webroot/PHP.Gt/",
+			"/home/g105b/Webroot/PHP.Gt/src"
 		]
 	},
 	"find_state":
@@ -329,134 +240,41 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"spin",
-			"join",
-			"session",
-			"pos",
-			"accept",
-			"exit",
-			"closeem",
-			"modal",
-			"die",
-			"leave",
-			"forceSkip",
-			"refresh",
-			"error",
-			"leave",
-			"email",
-			"btn_email",
-			"point",
-			"countdown",
-			"-moz-k",
-			"redirect",
-			"/\"",
-			"/",
-			"location:",
-			"redirect",
-			":",
-			"actionList",
-			"btn_ready",
-			"cookies",
-			"playsound",
-			"over",
-			"showh",
-			"console.log",
-			"messageb",
-			"history",
-			"hist",
-			"messageb",
-			"showHistory",
-			"audit",
-			"history",
-			"#messageB",
-			"9999px",
-			"#modal",
-			"img",
-			"stealth",
-			"msg-win",
-			"~ label",
-			":chec",
-			"0.5",
-			"stealth",
-			"form",
-			"main",
-			"turn",
-			"skip",
-			"time",
-			"skip",
-			"turn",
-			"refresh",
-			"spinIn",
-			"#hist",
-			"messagebox",
+			"$",
+			"“",
+			"’",
+			"“",
+			"$flair-url-base",
+			"$flair-font-client-prefix",
+			"gtbind",
+			"templatenext",
+			"@datapro",
+			"DataFactory",
+			"iteratorindex",
+			"pathdetails",
+			"builddetail",
+			"builddetails",
+			"getdestination",
+			"fixext",
+			"throw",
+			"$this->nodelist",
+			"css",
+			"fingerprint",
+			"asset",
+			"new Api",
+			"save",
+			"APP_NAMESPACE",
+			"strict",
+			"template",
+			"die(",
+			"headers::add(\"cont",
+			"headers::",
+			"Headers",
+			"content-type",
 			"append",
-			"[\"#messageBox\"]->append",
-			"messageB",
-			"TW.Spinner.id",
-			"z-index: -1",
-			"<<",
-			"animation",
-			"state_dec",
-			"lastact",
-			"action",
-			"_deciderObjs",
-			"STATE",
-			"state",
-			"TW.spinner.id",
-			"<<<",
-			"locked",
-			"stealth",
-			"import",
-			"important",
-			"fixed",
-			"playsound",
-			"skip",
-			"countdown",
-			"red",
-			"my-pos",
-			"you-",
-			"before",
-			"red",
-			"hit",
-			"bag",
-			"your-position",
-			"<<<",
-			"origin",
-			"swith",
-			"data-turnID",
-			"data-turn",
-			"locked.html",
-			"actionlist",
-			"<<<",
-			"stea",
-			"stealth",
-			"modal",
-			"data-unplaced",
-			"lastga",
-			"outputmodal",
-			"modal",
-			"messageb",
-			"<<<<<<<",
-			"btn_ready",
-			"$dom",
-			"win",
-			"winCell",
-			"winPosition",
-			"winCell",
-			"outputBattlefield",
-			"prevturn",
-			"$turn",
-			"_turnPrev",
-			"mypos",
-			"locked",
-			"leave",
-			"$pos",
-			"hover",
-			"$size",
-			"message",
-			"messageb",
-			"Create.html",
-			"white"
+			"getattr",
+			"classList",
+			"classlist"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -464,7 +282,12 @@
 		"regex": false,
 		"replace_history":
 		[
-			"[\"#messageBox\"]->prepend"
+			"$$",
+			"'",
+			"$font-url-base",
+			"$flair-url-base",
+			"Data",
+			"Data\nData"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -475,52 +298,53 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "README.md",
-					"semi_transient": true,
+					"file": "script.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 69,
+						"buffer_size": 7322,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								69,
-								69
+								6837,
+								6837
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 9072.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "index.html",
+					"file": "game.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 112,
+						"buffer_size": 277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27,
-								27
+								125,
+								125
 							]
 						],
 						"settings":
@@ -533,45 +357,17 @@
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10,
-								10
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 32.0
 	},
 	"input":
 	{
-		"height": 35.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -600,30 +396,14 @@
 	{
 		"height": 0.0
 	},
-	"output.git-checkout":
+	"output.unsaved_changes":
 	{
-		"height": 142.0
-	},
-	"output.git-commit":
-	{
-		"height": 142.0
-	},
-	"output.git-pull":
-	{
-		"height": 142.0
-	},
-	"output.git-push":
-	{
-		"height": 142.0
-	},
-	"output.xdebug":
-	{
-		"height": 0.0
+		"height": 154.0
 	},
 	"project": "unknown-narrative.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -632,348 +412,324 @@
 		"selected_items":
 		[
 			[
-				"context",
-				"Test/Features/Bootstrap/FeatureContext.php"
-			],
-			[
-				"closeemp",
-				"Database/Game/CloseEmpty.sql"
-			],
-			[
-				"bombfea",
-				"Test/Features/Bombing.feature"
-			],
-			[
-				"playerpos",
-				"Test/Features/PlayerPositions.feature"
-			],
-			[
-				"battle.php",
-				"PageCode/Battle.php"
-			],
-			[
-				"featcont",
-				"Test/Features/Bootstrap/FeatureContext.php"
-			],
-			[
-				"featurecont",
-				"Test/Features/Bootstrap/FeatureContext.php"
-			],
-			[
-				"animation",
-				"Style/Component/Animation.scss"
-			],
-			[
-				"battle.scss",
-				"Style/PageStyle/Battle.scss"
-			],
-			[
-				"commonphp",
-				"PageCode/_Common.php"
-			],
-			[
-				"battle.html",
-				"PageView/Battle.html"
-			],
-			[
-				"gameph",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"battlephp",
-				"PageCode/Battle.php"
-			],
-			[
-				"battlejs",
-				"Script/Go/Battle.js"
-			],
-			[
-				"getposi",
-				"Database/Game/GetPositions.sql"
-			],
-			[
-				"gameclass",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"joinphp",
-				"PageCode/Join.php"
-			],
-			[
-				"indexphp",
-				"PageCode/Index.php"
-			],
-			[
-				"index.html",
-				"PageView/Index.html"
-			],
-			[
-				"enter",
-				"Database/Game/Enter.sql"
-			],
-			[
-				"common.php",
-				"PageCode/_Common.php"
-			],
-			[
-				"locked.html",
-				"PageView/Locked.html"
-			],
-			[
-				"locked.php",
-				"PageCode/Locked.php"
-			],
-			[
-				"battle.js",
-				"Script/Go/Battle.js"
-			],
-			[
-				"join.php",
-				"PageCode/Join.php"
-			],
-			[
-				"gameclose",
-				"Database/Game/CloseEmpty.sql"
-			],
-			[
-				"gameleave",
-				"Database/Game/Leave.sql"
-			],
-			[
-				"locked",
-				"PageCode/Locked.php"
-			],
-			[
-				"game.class",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"battlehtml",
-				"PageView/Battle.html"
-			],
-			[
-				"lockedhtml",
-				"PageView/Locked.html"
-			],
-			[
-				"actiongetall",
-				"Database/Action/GetAll.sql"
-			],
-			[
-				"lockedphp",
-				"PageCode/Locked.php"
-			],
-			[
-				"sound",
-				"Script/Namespace/Sound.js"
-			],
-			[
-				"deciderscss",
-				"Style/Component/Decider.scss"
-			],
-			[
-				"mainform",
-				"Style/Component/MainForm.scss"
-			],
-			[
-				"header",
-				"PageView/_Header.html"
-			],
-			[
-				"battlescss",
-				"Style/PageStyle/Battle.scss"
-			],
-			[
-				"gameclassphp",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"animations",
-				"Style/Component/Animation.scss"
-			],
-			[
-				"common.scss",
-				"Style/Component/Common.scss"
+				"common",
+				"src/Page/_common.php"
 			],
 			[
 				"footer",
-				"PageView/_Footer.html"
+				"src/Page/_footer.html"
 			],
 			[
 				"headerhtml",
-				"PageView/_Header.html"
+				"src/Page/_header.html"
 			],
 			[
-				"commonjs",
-				"Script/Go/_Common.js"
+				"footer.html",
+				"src/Page/_footer.html"
 			],
 			[
-				"indexjs",
-				"Script/Go/Index.js"
-			],
-			[
-				"indexhtml",
-				"PageView/Index.html"
-			],
-			[
-				"header.html",
-				"PageView/_Header.html"
-			],
-			[
-				"commonscss",
-				"Style/Component/Common.scss"
-			],
-			[
-				"footerhtml",
-				"PageView/_Footer.html"
-			],
-			[
-				"lockedscss",
-				"Style/PageStyle/Locked.scss"
-			],
-			[
-				"spinnerjs",
-				"Script/Namespace/Spinner.js"
-			],
-			[
-				"gmae.class",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"datahit",
-				"Database/Action/Hit.sql"
-			],
-			[
-				"databasebomb",
-				"Database/Action/Bomb.sql"
-			],
-			[
-				"animationscss",
-				"Style/Component/Animation.scss"
-			],
-			[
-				"soundjs",
-				"Script/Namespace/Sound.js"
-			],
-			[
-				"anim",
-				"Style/Component/Animation.scss"
-			],
-			[
-				"var",
-				"Style/Component/Variables.scss"
-			],
-			[
-				"varia",
-				"Style/Component/Variables.scss"
-			],
-			[
-				"commonscs",
-				"Style/Component/Common.scss"
-			],
-			[
-				"animat",
-				"Style/Component/Animation.scss"
-			],
-			[
-				"index.scss",
-				"Style/PageStyle/Index.scss"
-			],
-			[
-				"indexscss",
-				"Style/PageStyle/Index.scss"
-			],
-			[
-				"variab",
-				"Style/Component/Variables.scss"
-			],
-			[
-				"pp.js",
-				"Script/Namespace/PP.js"
-			],
-			[
-				"mixin",
-				"Style/Component/Mixins.scss"
-			],
-			[
-				"mixins",
-				"Style/Component/Mixins.scss"
-			],
-			[
-				"stylebattle",
-				"Style/PageStyle/Battle.scss"
-			],
-			[
-				"index.js",
-				"Script/Go/Index.js"
-			],
-			[
-				"gamecalss",
-				"Class/Game/Game.class.php"
-			],
-			[
-				"getbyname",
-				"Database/Game/GetByName.sql"
-			],
-			[
-				"mixin.s",
-				"Style/Common/Mixins.scss"
-			],
-			[
-				"battescss",
-				"Style/PageStyle/Battle.scss"
-			],
-			[
-				"setdetails",
-				"Database/AppUser/SetDetails.sql"
-			],
-			[
-				"appuserset",
-				"Database/AppUser/SetDetails.sql"
-			],
-			[
-				"getent",
-				"Database/Game/GetEntered.sql"
-			],
-			[
-				"pjax",
-				"Script/Namespace/Pjax.js"
-			],
-			[
-				"mainscss",
-				"Style/Main.scss"
-			],
-			[
-				"main.scss",
-				"Style/Main.scss"
+				"index.html",
+				"src/Page/index.html"
 			],
 			[
 				"index",
-				"PageView/Index.html"
+				"src/Page/index.html"
 			],
 			[
-				"loadingscss",
-				"Style/Loading.scss"
+				"home.md",
+				"data/Content/home.md"
 			],
 			[
-				"usertool",
-				"PageTool/User/User.tool.php"
+				"bower",
+				"bower.json"
 			],
 			[
-				"ush",
-				"userauth-blueprint.sublime-project"
+				"gitig",
+				".gitignore"
 			],
 			[
-				"sessionclass",
-				"Class/Session/Session.class.php"
+				"giti",
+				".gitignore"
 			],
 			[
-				"sessiontest",
-				"Test/Class/Session.test.php"
+				"minkcontext",
+				"vendor/behat/mink-extension/src/Behat/MinkExtension/Context/MinkContext.php"
 			],
 			[
-				"bootstrap.php",
-				"Framework/Bootstrap.php"
+				"datasource",
+				"src/Data/Source.php"
+			],
+			[
+				"domnode.php",
+				"src/Dom/Node.php"
+			],
+			[
+				"template",
+				"src/Page/TemplateFactory.php"
+			],
+			[
+				"composer.json",
+				"composer.json"
+			],
+			[
+				"readme",
+				"ReadMe.md"
+			],
+			[
+				"bootstrap",
+				"test/Unit/Bootstrap.php"
+			],
+			[
+				"composer.",
+				"composer.json"
+			],
+			[
+				"csvstore",
+				"src/Data/Source/Csv/CsvStore.php"
+			],
+			[
+				"csvstrore",
+				"vendor/satooshi/php-coveralls/tests/Satooshi/Bundle/CoverallsV1Bundle/Repository/JobsRepositoryTest.php"
+			],
+			[
+				"source.php",
+				"src/Data/Source.php"
+			],
+			[
+				"apilogic",
+				"src/Logic/ApiLogic.php"
+			],
+			[
+				"logic.php",
+				"src/Logic/Logic.php"
+			],
+			[
+				"pagelogic",
+				"src/Logic/PageLogic.php"
+			],
+			[
+				"logic",
+				"src/Logic/LogicFactory.php"
+			],
+			[
+				"logicfactory",
+				"src/Logic/LogicFactory.php"
+			],
+			[
+				"dispatcher",
+				"src/Dispatcher/Dispatcher.php"
+			],
+			[
+				"disp",
+				"src/Dispatcher/DispatcherFactory.php"
+			],
+			[
+				"start",
+				"src/Core/Start.php"
+			],
+			[
+				"pagedispacher",
+				"src/Dispatcher/PageDispatcher.php"
+			],
+			[
+				"default",
+				"default.ini"
+			],
+			[
+				"start.php",
+				"src/Core/Start.php"
+			],
+			[
+				"logicfac",
+				"src/Logic/LogicFactory.php"
+			],
+			[
+				"pathdetails",
+				"src/ClientSide/PathDetails.php"
+			],
+			[
+				"pagemanifest.test.php",
+				"test/Unit/ClientSide/PageManifest.test.php"
+			],
+			[
+				"pagemanifest.php",
+				"src/ClientSide/PageManifest.php"
+			],
+			[
+				"pathdetal",
+				"src/ClientSide/PathDetails.php"
+			],
+			[
+				"dirrectets",
+				"test/Unit/Core/DirectoryRecursor.test.php"
+			],
+			[
+				"vendorscss",
+				"vendor/leafo/scssphp/scss.inc.php"
+			],
+			[
+				"clientsidecompilertest",
+				"test/Unit/ClientSide/Compiler.test.php"
+			],
+			[
+				"clientsidecompiler",
+				"src/ClientSide/Compiler.php"
+			],
+			[
+				"minkconte",
+				"vendor/behat/mink-extension/src/Behat/MinkExtension/Context/MinkContext.php"
+			],
+			[
+				"contextinter",
+				"vendor/behat/behat/src/Behat/Behat/Context/ContextInterface.php"
+			],
+			[
+				"subcontextablecon",
+				"vendor/behat/behat/src/Behat/Behat/Context/SubcontextableContextInterface.php"
+			],
+			[
+				"extendedconten",
+				"vendor/behat/behat/src/Behat/Behat/Context/ExtendedContextInterface.php"
+			],
+			[
+				"behatcontext",
+				"vendor/behat/behat/src/Behat/Behat/Context/BehatContext.php"
+			],
+			[
+				"rawminkcontext",
+				"vendor/behat/mink-extension/src/Behat/MinkExtension/Context/RawMinkContext.php"
+			],
+			[
+				"acceptancerun",
+				"test/Acceptance/run"
+			],
+			[
+				"dispatcher.php",
+				"src/Dispatcher/Dispatcher.php"
+			],
+			[
+				"dispatcherapidis",
+				"src/Dispatcher/ApiDispatcher.php"
+			],
+			[
+				"pagedispatcher",
+				"src/Dispatcher/PageDispatcher.php"
+			],
+			[
+				"server.php",
+				"src/Cli/Server.php"
+			],
+			[
+				"domdocument",
+				"src/Dom/Document.php"
+			],
+			[
+				"pagedis",
+				"src/Dispatcher/PageDispatcher.php"
+			],
+			[
+				"dispfacttest",
+				"test/Unit/Dispatcher/DispatcherFactory.test.php"
+			],
+			[
+				"dispfact",
+				"src/Dispatcher/DispatcherFactory.php"
+			],
+			[
+				"pagedispattest",
+				"test/Unit/Dispatcher/PageDispatcher.test.php"
+			],
+			[
+				"csv",
+				"src/Data/Csv.php"
+			],
+			[
+				"component",
+				"src/Api/Component.php"
+			],
+			[
+				"session/store",
+				"src/Session/Store.php"
+			],
+			[
+				"sessionstore",
+				"src/Session/SessionStoreNotFoundException.php"
+			],
+			[
+				"session",
+				"src/Session/Session.php"
+			],
+			[
+				"responsecode",
+				"src/Response/ResponseCode.php"
+			],
+			[
+				"headers",
+				"src/Response/Headers.php"
+			],
+			[
+				"pagelogi",
+				"src/Logic/PageLogic.php"
+			],
+			[
+				"pagedispa",
+				"src/Dispatcher/PageDispatcher.php"
+			],
+			[
+				"templatef",
+				"src/Page/TemplateFactory.php"
+			],
+			[
+				"response",
+				"src/Response/ResponseCode.php"
+			],
+			[
+				"endpoint",
+				"src/Api/Endpoint.php"
+			],
+			[
+				"component.php",
+				"src/Api/Component.php"
+			],
+			[
+				"obj",
+				"src/Core/Obj.php"
+			],
+			[
+				"path.php",
+				"src/Core/Path.php"
+			],
+			[
+				"responsecontent",
+				"src/Response/ResponseContent.php"
+			],
+			[
+				"gateway",
+				"src/Cli/Gateway.php"
+			],
+			[
+				"document",
+				"src/Dom/Document.php"
+			],
+			[
+				"pagedisp",
+				"src/Dispatcher/PageDispatcher.php"
+			],
+			[
+				"srcdomnode",
+				"src/Dom/Node.php"
+			],
+			[
+				"domnode",
+				"vendor/sebastian/comparator/src/DOMNodeComparator.php"
+			],
+			[
+				"resposcode",
+				"src/Response/ResponseCode.php"
+			],
+			[
+				"compiler",
+				"src/ClientSide/Compiler.php"
 			]
 		],
 		"width": 0.0
@@ -984,40 +740,32 @@
 		"selected_items":
 		[
 			[
-				"dhy",
-				"~/Webroot/dhydro/dhydro.sublime-project"
+				"jdw",
+				"~/Webroot/jdw_library/jdw_library.sublime-project"
 			],
 			[
-				"cfit",
-				"~/Webroot/cfit/cfit.sublime-project"
+				"phpcsv",
+				"~/Webroot/phpcsv/phpcsv.sublime-project"
 			],
 			[
-				"bri",
-				"~/Webroot/brightflair/brightflair.sublime-project"
+				"www.p",
+				"~/Webroot/www.php.gt/www.php.gt.sublime-project"
+			],
+			[
+				"flair",
+				"~/Webroot/flair/flair.sublime-project"
+			],
+			[
+				"bris",
+				"~/Webroot/brisky/brisky.sublime-project"
+			],
+			[
+				"www",
+				"~/Webroot/www.php.gt/www.php.gt.sublime-project"
 			],
 			[
 				"",
-				"~/Dev/emat/emat.sublime-project"
-			],
-			[
-				"bright",
-				"~/Webroot/brightflair/brightflair.sublime-project"
-			],
-			[
-				"brigh",
-				"~/Webroot/brightflair/brightflair.sublime-project"
-			],
-			[
-				"php.gt",
 				"~/Webroot/PHP.Gt/PHP.Gt.sublime-project"
-			],
-			[
-				"sass",
-				"~/Webroot/sass-app/sass-app.sublime-project"
-			],
-			[
-				"sass-app",
-				"~/Webroot/sass-app/sass-app.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1030,48 +778,15 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
-		"xdebug":
-		{
-			"hide_conflict": false,
-			"restore_index":
-			{
-				"15":
-				{
-					"group": 0,
-					"index": 0
-				}
-			},
-			"restore_layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						1,
-						1
-					]
-				],
-				"cols":
-				[
-					0.0,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					1.0
-				]
-			}
-		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 274.0,
+	"side_bar_width": 228.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
